@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CLASS_LIST } from './data/classes'
 
 @Component({
   selector: 'app-root',
@@ -6,9 +7,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'test-app';
 
-  classes: string[] = [
-    "Druid","Mage", "Paladin","Priest", "Rogue", "Warlock", "Warrior", "Hunter"
-  ]
+  classes: string[] = CLASS_LIST
 }
