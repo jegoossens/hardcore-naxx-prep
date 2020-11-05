@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'test-app';
+
+  classes: string[] = [
+    "Druid","Mage", "Paladin","Priest", "Rogue", "Warlock", "Warrior", "Hunter"
+  ]
 }

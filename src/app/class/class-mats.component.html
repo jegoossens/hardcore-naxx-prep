@@ -1,0 +1,29 @@
+<div class="inner-content">
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">Mandatory</h5>
+      <div class="table-responsive">
+        <table class="table table-striped">
+          <thead>
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">RecommendedAmount</th>
+            <th scope="col">My stash</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let item of mandatoryItems; index as i">
+            <td>
+              <a [href]="item.wowheadLink">{{ item.name }}</a>
+            </td>
+            <td>{{ item.recommendedAmount | number }}</td>
+            <td>
+              <input (change)="saveInStorage($event)" #item class="form-control" [id]="item.name + '-' + className" type="number" placeholder="0">
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
