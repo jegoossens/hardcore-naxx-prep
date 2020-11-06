@@ -31,4 +31,24 @@ export class ClassMatsComponent implements AfterViewInit, OnInit {
      localStorage.setItem(event.target.id, event.target.value);
   }
 
+  increment(id: string){
+      this.changeCount(id, 1)
+  }
+
+  decrement(id: string){
+      this.changeCount(id, -1)
+  }
+
+  findInput(id: string){
+    return this.viewChildren.find(element => element.nativeElement.id === id)
+  }
+
+  changeCount(id, change){
+      const element = this.findInput(id);
+      if (element){
+          let elementValue = element.nativeElement.value ? parseInt(element.nativeElement.value) : 0;
+          element.nativeElement.value = elementValue + change;
+      }
+  }
+
 }
