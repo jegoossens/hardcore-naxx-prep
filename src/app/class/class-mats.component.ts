@@ -52,7 +52,7 @@ export class ClassMatsComponent implements AfterViewInit, OnInit {
       if (element){
           let elementValue = element.nativeElement.value ? parseInt(element.nativeElement.value) : 0;
           element.nativeElement.value = elementValue + change;
-          this.saveValueInStorage(id, elementValue);
+          this.saveValueInStorage(id, element.nativeElement.value);
       }
   }
 
