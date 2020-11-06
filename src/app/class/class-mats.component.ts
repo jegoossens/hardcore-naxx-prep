@@ -28,7 +28,11 @@ export class ClassMatsComponent implements AfterViewInit, OnInit {
   }
 
   saveInStorage(event) {
-     localStorage.setItem(event.target.id, event.target.value);
+    this.saveValueInStorage(event.target.id, event.target.value)
+  }
+
+  saveValueInStorage(id, value){
+     localStorage.setItem(id, value);
   }
 
   increment(id: string){
@@ -48,6 +52,7 @@ export class ClassMatsComponent implements AfterViewInit, OnInit {
       if (element){
           let elementValue = element.nativeElement.value ? parseInt(element.nativeElement.value) : 0;
           element.nativeElement.value = elementValue + change;
+          this.saveValueInStorage(id, elementValue);
       }
   }
 
