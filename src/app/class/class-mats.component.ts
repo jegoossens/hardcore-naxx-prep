@@ -18,6 +18,7 @@ export class ClassMatsComponent implements AfterViewInit, OnInit {
   }
 
   ngAfterViewInit(): void {
+    console.log("view init")
     this.viewChildren.forEach(element => {
       const myAmount = localStorage.getItem(element.nativeElement.id);
       if (myAmount){
