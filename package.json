@@ -5,7 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "build-github": "ng build --prod --base-href https://jegoossens.github.io/hardcore-naxx-prep/ && mkdir -p github-pages && mv dist/hardcore-naxx-prep/* github-pages",
+    "build-github": "ng build --prod --base-href https://jegoossens.github.io/hardcore-naxx-prep/ && mkdir -p docs && mv dist/hardcore-naxx-prep/* docs",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
