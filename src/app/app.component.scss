@@ -1,5 +1,12 @@
+@import "~bootstrap/scss/bootstrap-grid.scss";
 .content {
-  margin: 2% 10% 2% 10%
+  margin: 2% 10% 2% 10%;
+}
+
+@include media-breakpoint-down(md) {
+    .content {
+      margin: 0;
+    }
 }
 
 .menu-icon {

@@ -1,32 +1,34 @@
 <div class="inner-content">
-  <div class="card">
-    <div *ngIf="classData?.mandatory" class="card-body">
-      <h5 class="card-title">Mandatory</h5>
+  <div *ngFor="let category of classData | keyvalue" class="card">
+    <div class="card-body">
+      <h5 class="card-title">{{category.key}}</h5>
       <div class="table-responsive">
         <table class="table table-striped">
           <thead>
           <tr>
-            <th scope="col" style="width: 65%;">Name</th>
-            <th scope="col" style="width: 20%;">Recommended</th>
+            <th scope="col" style="width: 30%;">Name</th>
+            <th scope="col" style="width: 40%;">Comments</th>
+            <th scope="col" style="width: 15%;">Suggested</th>
             <th scope="col" style="width: 15%;">My stash</th>
           </tr>
           </thead>
           <tbody>
-          <tr *ngFor="let item of classData.mandatory; index as i">
+          <tr *ngFor="let item of category.value;">
             <td>
-              <a [href]="item.wowheadLink">{{ item.name }}</a>
+              <a [href]="item.link">{{ item.itemName }}</a>
             </td>
-            <td>{{ item.recommendedAmount | number }}</td>
+            <td>{{item.comment}}</td>
+            <td>{{ item.amount | number }}</td>
             <td>
               <div class="input-group">
                 <span class="input-group-btn">
-                  <button type="button" class="btn btn-danger btn-number" (click)= "decrement(item.name + '-' + className)" data-type="minus" data-field="quant[2]">
+                  <button type="button" class="btn btn-danger btn-number" (click)= "decrement(item.name + '-' + class.name)">
                     <span class="fa fa-minus"></span>
                   </button>
                 </span>
-                <input (change)="saveInStorage($event)" #item class="form-control" [id]="item.name + '-' + className" type="number" placeholder="0">
+                <input (change)="saveInStorage($event)" #item class="form-control"  [id]="item.name + '-' + class.name" type="number" placeholder="0">
                 <span class="input-group-btn">
-                  <button type="button" class="btn btn-success btn-number" (click)= "increment(item.name + '-' + className)" data-type="minus" data-field="quant[2]">
+                  <button type="button" class="btn btn-success btn-number" (click)= "increment(item.name + '-' + class.name)">
                     <span class="fa fa-plus"></span>
                   </button>
                 </span>

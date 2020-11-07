@@ -1,3 +1,14 @@
+@import "~bootstrap/scss/bootstrap-grid.scss";
 .inner-content {
   padding: 2% 5% 2%
+
+  table {
+     table-layout: fixed;
+     word-wrap: break-word;
+  }
+
+  input {
+    min-width: 75px;
+    max-width: 100px;
+  }
 }

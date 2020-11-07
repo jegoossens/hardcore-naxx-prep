@@ -8,5 +8,5 @@ import { CLASS_LIST } from './data/classes'
 })
 export class AppComponent {
 
-  classes: string[] = CLASS_LIST
+  classes = CLASS_LIST
 }

@@ -2,10 +2,10 @@
     <span class="navbar-brand ml-5 mr-auto mb-0 h1 align-middle">Hardcore Naxx Prep</span>
   <ng-container class="border" *ngFor="let class of classes" ngbNavItem>
     <a ngbNavLink>
-      <img class="menu-icon rounded" [src]="'assets/'+ (class | lowercase) +'.png'">
-      <span class="menu-text">{{class}}</span></a>
+      <img class="menu-icon rounded" [src]="'assets/'+ class.asset+'.png'">
+      <span class="menu-text">{{class.name}}</span></a>
     <ng-template ngbNavContent class="h-100">
-      <class-mats [className]="class"></class-mats>
+      <class-mats [class]="class"></class-mats>
     </ng-template>
   </ng-container>
 </nav>
