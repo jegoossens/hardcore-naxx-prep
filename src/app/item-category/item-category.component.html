@@ -3,40 +3,15 @@
   <table class="table table-sm">
     <thead>
     <tr>
+      <th scope="col" style="width: 15%x"></th>
       <th scope="col" style="width: 30%;">Name</th>
-      <th scope="col" style="width: 40%;">Comments</th>
+      <th scope="col" style="width: 30%;">Comments</th>
       <th scope="col" style="width: 15%;">Suggested</th>
       <th scope="col" style="width: 15%;">My stash</th>
     </tr>
     </thead>
     <tbody>
-    <ng-container *ngFor="let item of itemCategory.items">
-      <tr [class]="determineClass(item)">
-        <td>
-          <a [href]="item.link">{{ item.itemName }}</a>
-        </td>
-        <td>{{item.comment}}</td>
-        <td>{{ item.amount | number }}</td>
-        <td [class]="determineClass(item)">
-          <div class="input-group input-group-sm">
-                <span class="input-group-btn input-group-btn-sm">
-                  <button type="button" class="btn btn-danger btn-number btn-sm"
-                          (click)="decrement(getItemId(item))">
-                    <span class="fa fa-minus"></span>
-                  </button>
-                </span>
-            <input (change)="saveInStorage($event)" #item class="form-control form-control-sm"
-                   [id]="getItemId(item)" type="number" placeholder="0">
-            <span class="input-group-btn input-group-btn-sm">
-                  <button type="button" class="btn btn-success btn-number btn-sm"
-                          (click)="increment(getItemId(item))">
-                    <span class="fa fa-plus"></span>
-                  </button>
-                </span>
-          </div>
-        </td>
-      </tr>
-    </ng-container>
+    <tr  *ngFor="let item of itemCategory.items" [characterClass]="characterClass" [item]="item" class-item></tr>
     </tbody>
   </table>
 </div>

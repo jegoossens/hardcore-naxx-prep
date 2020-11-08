@@ -8,13 +8,15 @@ import {CommonModule} from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import {ClassMatsComponent} from './class/class-mats.component';
 import {ItemCategoryComponent} from './item-category/item-category.component';
+import {ItemComponent} from './item-category/item/item.component';
 import {DataService} from './data/data-service'
 
 @NgModule({
   declarations: [
     AppComponent,
     ClassMatsComponent,
-    ItemCategoryComponent
+    ItemCategoryComponent,
+    ItemComponent
   ],
   imports: [
     BrowserModule,

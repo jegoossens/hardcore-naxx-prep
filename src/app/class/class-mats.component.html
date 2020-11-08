@@ -2,8 +2,38 @@
   <div class="card">
     <div class="card-body">
       <ng-container *ngFor="let category of classData">
-          <item-category [class]="class" [itemCategory]="category"></item-category>
+        <item-category [characterClass]="characterClass" [itemCategory]="category"></item-category>
       </ng-container>
+        <h5 class="card-title">Not applicable</h5>
+        <div class="table-responsive">
+          <table class="table table-sm">
+            <thead>
+            <tr>
+              <th scope="col" style="width: 15%x"></th>
+              <th scope="col" style="width: 35%;">Name</th>
+              <th scope="col" style="width: 35%;">Comments</th>
+              <th scope="col" style="width: 15%;">Suggested</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let item of notApplicable;" class="table-secondary">
+              <td>
+                <span class="input-group-btn input-group-btn-sm">
+                <button type="button" class="btn btn-success btn-number btn-sm"
+                        (click)="addItem(item)">
+                  <span class="fa fa-plus"></span>
+                </button>
+                </span>
+              </td>
+              <td>
+                <a [href]="item.link">{{ item.itemName }}</a>
+              </td>
+              <td>{{item.comment}}</td>
+              <td>{{ item.amount | number }}</td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
     </div>
   </div>
 </div>

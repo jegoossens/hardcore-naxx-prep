@@ -1,0 +1,36 @@
+<!--<tr [class]="getClass()">-->
+<ng-container *ngIf="!hidden">
+  <td [class]="rowClass">
+          <span class="input-group-btn input-group-btn-sm">
+            <button type="button" class="btn btn-danger btn-number btn-sm"
+                    (click)="removeItem()">
+              <span class="fa fa-minus"></span>
+            </button>
+          </span>
+  </td>
+  <td [class]="rowClass">
+    <a [href]="item.link">{{ item.itemName }}</a>
+  </td>
+  <td [class]="rowClass">{{item.comment}}</td>
+  <td [class]="rowClass">{{ item.amount | number }}</td>
+  <td [class]="rowClass">
+    <div class="input-group input-group-sm">
+                <span class="input-group-btn input-group-btn-sm">
+                  <button type="button" class="btn btn-danger btn-number btn-sm"
+                          (click)="decrement()">
+                    <span class="fa fa-minus"></span>
+                  </button>
+                </span>
+      <input (change)="saveInStorage($event)" class="form-control form-control-sm"
+             [id]="itemId" [value]="value" type="number">
+      <span class="input-group-btn input-group-btn-sm">
+                  <button type="button" class="btn btn-success btn-number btn-sm"
+                          (click)="increment()">
+                    <span class="fa fa-plus"></span>
+                  </button>
+                </span>
+    </div>
+  </td>
+</ng-container>
+
+
