@@ -1,20 +1,12 @@
 <!--<tr [class]="getClass()">-->
 <ng-container *ngIf="!hidden">
   <td [class]="rowClass">
-          <span class="input-group-btn input-group-btn-sm">
-            <button type="button" class="btn btn-danger btn-number btn-sm"
-                    (click)="removeItem()">
-              <span class="fa fa-minus"></span>
-            </button>
-          </span>
-  </td>
-  <td [class]="rowClass">
     <a [href]="item.link">{{ item.itemName }}</a>
   </td>
   <td [class]="rowClass">{{item.comment}}</td>
-  <td [class]="rowClass">{{ item.amount | number }}</td>
+  <td [class]="rowClass + ' text-center'">{{ item.amount | number }}</td>
   <td [class]="rowClass">
-    <div class="input-group input-group-sm">
+    <div class="input-group input-group-sm min-width-input">
                 <span class="input-group-btn input-group-btn-sm">
                   <button type="button" class="btn btn-danger btn-number btn-sm"
                           (click)="decrement()">
@@ -30,6 +22,14 @@
                   </button>
                 </span>
     </div>
+  </td>
+  <td [class]="rowClass + ' text-right'">
+          <span class="input-group-btn input-group-btn-sm">
+            <button type="button" class="btn btn-primary btn-secondary btn-sm"
+                    (click)="removeItem()">
+              <span class="fa fa-times"></span>
+            </button>
+          </span>
   </td>
 </ng-container>
 

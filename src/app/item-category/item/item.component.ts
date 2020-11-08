@@ -51,6 +51,7 @@ export class ItemComponent implements OnInit {
   changeCount(id, change){
      this.value = this.value as number + change;
      this.rowClass = this.getClass();
+     this.saveValueInStorage(id, this.value)
   }
 
   removeItem(){

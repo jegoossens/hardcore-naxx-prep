@@ -9,27 +9,27 @@
           <table class="table table-sm">
             <thead>
             <tr>
-              <th scope="col" style="width: 15%x"></th>
               <th scope="col" style="width: 35%;">Name</th>
               <th scope="col" style="width: 35%;">Comments</th>
-              <th scope="col" style="width: 15%;">Suggested</th>
+              <th scope="col" style="width: 15%;" class="text-center">Suggested</th>
+              <th scope="col" style="width: 5%" class="text-right">N/A</th>
             </tr>
             </thead>
             <tbody>
             <tr *ngFor="let item of notApplicable;" class="table-secondary">
               <td>
-                <span class="input-group-btn input-group-btn-sm">
-                <button type="button" class="btn btn-success btn-number btn-sm"
-                        (click)="addItem(item)">
-                  <span class="fa fa-plus"></span>
-                </button>
-                </span>
-              </td>
-              <td>
                 <a [href]="item.link">{{ item.itemName }}</a>
               </td>
               <td>{{item.comment}}</td>
-              <td>{{ item.amount | number }}</td>
+              <td class="text-center">{{ item.amount | number }}</td>
+              <td class="text-right">
+                <span class="input-group-btn input-group-btn-sm">
+                <button type="button" class="btn btn-success btn-number btn-sm"
+                        (click)="addItem(item)">
+                  <span class="fa fa-plus-square"></span>
+                </button>
+                </span>
+              </td>
             </tr>
             </tbody>
           </table>
