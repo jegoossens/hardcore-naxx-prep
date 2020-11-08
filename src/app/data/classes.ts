@@ -1,38 +1,38 @@
 export const CLASS_LIST = [
         {
           name: "Druid",
-          asset: "druid"
+          id: "druid"
         },
         {
           name: "Mage",
-          asset: "mage"
+          id: "mage"
         },
         {
           name: "Paladin",
-          asset: "paladin"
+          id: "paladin"
         },
         {
           name: "Priest",
-          asset: "priest"
+          id: "priest"
         },
         {
           name: "Rogue",
-          asset: "rogue"
+          id: "rogue"
         },
         {
           name: "Warlock",
-          asset: "warlock"
+          id: "warlock"
         },
         {
           name: "Warrior (Tank)",
-          asset: "warrior-tank"
+          id: "warrior-tank"
         },
         {
           name: "Warrior (DPS)",
-          asset: "warrior-fury"
+          id: "warrior-dps"
         },
         {
           name: "Hunter",
-          asset: "hunter"
+          id: "hunter"
         }
     ]

@@ -1,44 +1,8 @@
 <div class="inner-content">
   <div class="card">
     <div class="card-body">
-      <ng-container *ngFor="let category of classData | keyvalue">
-      <h5 class="card-title">{{category.key}}</h5>
-      <div class="table-responsive">
-        <table class="table table-sm table-striped">
-          <thead>
-          <tr>
-            <th scope="col" style="width: 30%;">Name</th>
-            <th scope="col" style="width: 40%;">Comments</th>
-            <th scope="col" style="width: 15%;">Suggested</th>
-            <th scope="col" style="width: 15%;">My stash</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr *ngFor="let item of category.value;">
-            <td>
-              <a [href]="item.link">{{ item.itemName }}</a>
-            </td>
-            <td>{{item.comment}}</td>
-            <td>{{ item.amount | number }}</td>
-            <td>
-              <div class="input-group input-group-sm">
-                <span class="input-group-btn input-group-btn-sm">
-                  <button type="button" class="btn btn-danger btn-number btn-sm" (click)= "decrement(item.itemName + '-' + class.name)">
-                    <span class="fa fa-minus"></span>
-                  </button>
-                </span>
-                <input (change)="saveInStorage($event)" #item class="form-control form-control-sm"  [id]="item.itemName + '-' + class.name" type="number" placeholder="0">
-                <span class="input-group-btn input-group-btn-sm">
-                  <button type="button" class="btn btn-success btn-number btn-sm" (click)= "increment(item.itemName + '-' + class.name)">
-                    <span class="fa fa-plus"></span>
-                  </button>
-                </span>
-              </div>
-            </td>
-          </tr>
-          </tbody>
-        </table>
-      </div>
+      <ng-container *ngFor="let category of classData">
+          <item-category [class]="class" [itemCategory]="category"></item-category>
       </ng-container>
     </div>
   </div>

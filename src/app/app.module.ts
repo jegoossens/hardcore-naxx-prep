@@ -5,12 +5,16 @@ import { NgbModule, NgbNavModule} from '@ng-bootstrap/ng-bootstrap'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {CommonModule} from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 import {ClassMatsComponent} from './class/class-mats.component';
+import {ItemCategoryComponent} from './item-category/item-category.component';
+import {DataService} from './data/data-service'
 
 @NgModule({
   declarations: [
     AppComponent,
-    ClassMatsComponent
+    ClassMatsComponent,
+    ItemCategoryComponent
   ],
   imports: [
     BrowserModule,
@@ -18,8 +22,9 @@ import {ClassMatsComponent} from './class/class-mats.component';
     NgbModule,
     NgbNavModule,
     CommonModule,
+    HttpClientModule,
   ],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
