@@ -6,7 +6,7 @@
         "itemName": "AD Honored: Arcane Crystal",
         "link": "https://classic.wowhead.com/item=12363/arcane-crystal",
         "amount": 5,
-        "comment": "Note that you need *crystals*, live test not *bars*."
+        "comment": "Note that you need *crystals*, not *bars*."
       },
       {
         "itemName": "AD Honored: Nexus Crystal",
