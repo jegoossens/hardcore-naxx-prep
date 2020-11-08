@@ -1,9 +1,10 @@
 <div class="inner-content">
-  <div *ngFor="let category of classData | keyvalue" class="card">
+  <div class="card">
     <div class="card-body">
+      <ng-container *ngFor="let category of classData | keyvalue">
       <h5 class="card-title">{{category.key}}</h5>
       <div class="table-responsive">
-        <table class="table table-striped">
+        <table class="table table-sm table-striped">
           <thead>
           <tr>
             <th scope="col" style="width: 30%;">Name</th>
@@ -20,15 +21,15 @@
             <td>{{item.comment}}</td>
             <td>{{ item.amount | number }}</td>
             <td>
-              <div class="input-group">
-                <span class="input-group-btn">
-                  <button type="button" class="btn btn-danger btn-number" (click)= "decrement(item.name + '-' + class.name)">
+              <div class="input-group input-group-sm">
+                <span class="input-group-btn input-group-btn-sm">
+                  <button type="button" class="btn btn-danger btn-number btn-sm" (click)= "decrement(item.name + '-' + class.name)">
                     <span class="fa fa-minus"></span>
                   </button>
                 </span>
-                <input (change)="saveInStorage($event)" #item class="form-control"  [id]="item.name + '-' + class.name" type="number" placeholder="0">
-                <span class="input-group-btn">
-                  <button type="button" class="btn btn-success btn-number" (click)= "increment(item.name + '-' + class.name)">
+                <input (change)="saveInStorage($event)" #item class="form-control form-control-sm"  [id]="item.name + '-' + class.name" type="number" placeholder="0">
+                <span class="input-group-btn input-group-btn-sm">
+                  <button type="button" class="btn btn-success btn-number btn-sm" (click)= "increment(item.name + '-' + class.name)">
                     <span class="fa fa-plus"></span>
                   </button>
                 </span>
@@ -38,6 +39,7 @@
           </tbody>
         </table>
       </div>
+      </ng-container>
     </div>
   </div>
 </div>
