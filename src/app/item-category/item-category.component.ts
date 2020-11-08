@@ -1,5 +1,5 @@
 import { Component, Input, AfterViewInit, QueryList, ViewChildren, ElementRef } from '@angular/core';
-import { ItemCategory } from './item-category'
+import { ItemCategory, Item } from './item-category'
 import { Class } from '../class/class'
 
 @Component({
@@ -39,16 +39,40 @@ export class ItemCategoryComponent implements AfterViewInit {
   }
 
   findInput(id: string){
-    return this.viewChildren.find(element => element.nativeElement.id === id)
+    if (this.viewChildren){
+       return this.viewChildren.find(element => element.nativeElement.id === id)
+    }
   }
 
   changeCount(id, change){
       const element = this.findInput(id);
       if (element){
-          let elementValue = element.nativeElement.value ? parseInt(element.nativeElement.value) : 0;
+          let elementValue = this.getElementValue(element);
           element.nativeElement.value = elementValue + change;
           this.saveValueInStorage(id, element.nativeElement.value);
       }
+  }
+
+  getElementValue(element): number {
+    return element.nativeElement.value ? parseInt(element.nativeElement.value) : 0;
+  }
+
+  getItemId(item: Item): string{
+      console.log
+      console.log("le Item", item)
+      return item.itemName + '-'+this.class.name;
+  }
+
+  determineClass(item: Item): string {
+      const input = this.findInput(this.getItemId(item));
+      const value = input ? this.getElementValue(input) : 0;
+      if (value <= 0){
+        return "table-danger";
+      } else if (value > 0 && value < item.amount){
+        return "table-warning";
+      } else {
+        return "table-success";
+       }
   }
 
 }
